@@ -10,7 +10,7 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "elio";
-  version = "1.8.0";
+  version = "1.11.2";
   __structuredAttrs = true;
   doCheck = false;
 
@@ -18,10 +18,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
     owner = "elio-fm";
     repo = "elio";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-r7/LT0wGs8G9UN7H89WBBYGdKhCU6FXJx+UXNWfIZDc=";
+    hash = "sha256-k+88cWiHi1a+f6oulb5MTCnWrJU4vKPEAHBwq5H9bkQ=";
   };
 
-  cargoHash = "sha256-x9qeMsNLELZu+23pQZNwNgOxlx7c+aHCIpzagHO/Hbg=";
+  cargoHash = "sha256-JxdWxkpyYbNxe7B1WNKRDyj2xH1W2kQn2rYj/NdPkY4=";
 
   nativeBuildInputs = [
     pkg-config

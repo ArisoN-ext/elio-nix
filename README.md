@@ -35,3 +35,20 @@ This will create a `result` symlink in the current directory. You can then run t
 ```bash
 ./result/bin/elio
 ```
+
+## Binary Cache
+
+To avoid building from source, you can use the pre-built binaries from [Cachix](https://app.cachix.org/cache/elio-nix).
+
+Add the following to your `nix.conf` (usually located at `~/.config/nix/nix.conf` or `/etc/nix/nix.conf`):
+```text
+substituters = https://cache.nixos.org https://elio-nix.cachix.org
+trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= elio-nix.cachix.org-1:H3azbaB/MaaR2ORZ3+F9jDjvzxLNuRa0FIg002dFDCM=
+```
+
+For **NixOS**, add this to your `configuration.nix`:
+```nix
+nix.settings = {
+  substituters = [ "https://elio-nix.cachix.org" ];
+  trusted-public-keys = [ "elio-nix.cachix.org-1:H3azbaB/MaaR2ORZ3+F9jDjvzxLNuRa0FIg002dFDCM=" ];
+};
